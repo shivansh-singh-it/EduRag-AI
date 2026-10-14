@@ -1,0 +1,110 @@
+[
+  {
+    "id": "doc_cs_recursion_01",
+    "course": "Computer Science",
+    "module": "FFF",
+    "topic": "Recursion",
+    "difficulty": "Beginner",
+    "academic_level": "Undergraduate Year 1",
+    "source": "Open University FFF Course Materials - Unit 3",
+    "page": 14,
+    "title": "Introduction to Recursion and Base Cases",
+    "content": "Recursion is a programming technique where a function solves a problem by calling a smaller instance of itself. Think of recursion like Russian nesting dolls (Matryoshka): to find the smallest doll inside, you keep opening the outer dolls until you hit the smallest solid doll that cannot be opened further. In programming, this stopping condition is called the 'Base Case'. Without a base case, recursion continues infinitely and causes a stack overflow error. Every recursive algorithm consists of two essential parts: 1) Base Case: A condition that stops recursion without making another call. 2) Recursive Step: A rule that reduces the input size closer to the base case. Example: Counting down from n to 1. In Python:\ndef countdown(n):\n    if n <= 0:  # Base Case\n        print('Liftoff!')\n        return\n    print(n)\n    countdown(n - 1)  # Recursive Step"
+  },
+  {
+    "id": "doc_cs_recursion_02",
+    "course": "Computer Science",
+    "module": "FFF",
+    "topic": "Recursion",
+    "difficulty": "Intermediate",
+    "academic_level": "Undergraduate Year 1",
+    "source": "Open University FFF Course Materials - Unit 4",
+    "page": 28,
+    "title": "Recursion Call Stack and Call Frames",
+    "content": "When a recursive function executes, each function call allocates an activation record (stack frame) on the call stack in memory. The stack frame stores local variables, parameter values, and the return address. In a recursive chain, active frames accumulate until the base case returns a value. As execution unwinds, stack frames pop off in Last-In-First-Out (LIFO) order. Consider computing factorial: factorial(4) calls factorial(3) -> factorial(2) -> factorial(1) -> returns 1. The memory complexity of non-tail recursion is O(n) because n stack frames exist simultaneously. Traversal of tree structures such as Binary Trees naturally maps to recursion because each subtree is itself a binary tree. Example traversal:\ndef inorder(node):\n    if not node: return\n    inorder(node.left)\n    visit(node.val)\n    inorder(node.right)"
+  },
+  {
+    "id": "doc_cs_recursion_03",
+    "course": "Computer Science",
+    "module": "FFF",
+    "topic": "Recursion",
+    "difficulty": "Advanced",
+    "academic_level": "Undergraduate Year 2",
+    "source": "Open University FFF Advanced Algorithms - Chapter 6",
+    "page": 82,
+    "title": "Tail Call Optimization, Stack Overflow Prevention, and Divide-and-Conquer Recurrences",
+    "content": "In production environments, naive recursion risks call stack exhaustion when call depths reach system limits (default recursion limit in CPython is typically 1000). Tail recursion occurs when the recursive call is the strict final operation before returning, allowing compilers with Tail Call Optimization (TCO) to reuse the current activation frame instead of pushing a new frame, transforming recursion into O(1) auxiliary space complexity. For divide-and-conquer paradigms (MergeSort, QuickSort, Strassen Matrix Multiplication), algorithm complexity is formalized using the Master Theorem: T(n) = a*T(n/b) + f(n). Where recursion branches (e.g., naive Fibonacci T(n) = T(n-1) + T(n-2) yielding O(2^n)), memoization and dynamic programming replace redundant subtree recomputation by storing intermediate state in a lookup table."
+  },
+  {
+    "id": "doc_cs_python_01",
+    "course": "Computer Science",
+    "module": "FFF",
+    "topic": "Python Fundamentals",
+    "difficulty": "Beginner",
+    "academic_level": "Undergraduate Year 1",
+    "source": "Open University FFF Core Programming Guide",
+    "page": 5,
+    "title": "Python Syntax, Variables, and Control Flow",
+    "content": "Python is a high-level interpreted programming language renowned for its readable syntax and dynamic typing. Variables in Python are created simply by assigning a value without requiring explicit type declarations: x = 10 or name = 'EduRAG'. Python uses indentation (whitespace) instead of curly braces to delimit code blocks. Key data structures include lists (ordered, mutable: [1, 2, 3]), tuples (ordered, immutable: (1, 2)), dictionaries (key-value hash maps: {'score': 85}), and sets (unordered, unique elements: {1, 2, 3}). Conditional execution uses if, elif, and else statements, while loops execute via 'for item in collection' or 'while condition:'."
+  },
+  {
+    "id": "doc_cs_data_structures_01",
+    "course": "Computer Science",
+    "module": "FFF",
+    "topic": "Data Structures",
+    "difficulty": "Intermediate",
+    "academic_level": "Undergraduate Year 1",
+    "source": "Open University FFF Data Structures Handbook",
+    "page": 44,
+    "title": "Linked Lists vs Arrays: Memory Layout and Big-O Trade-offs",
+    "content": "Arrays provide contiguous memory allocation where elements are stored adjacent to each other. This enables O(1) constant time random access via index calculation (base_address + index * element_size) and high CPU cache locality. However, inserting or deleting at arbitrary positions requires shifting elements, resulting in O(n) worst-case time. In contrast, a Linked List consists of separate node objects where each node contains data and one or more reference pointers to neighboring nodes. Nodes can reside anywhere in heap memory. Insertion and deletion given a node pointer is O(1) pointer reassignment, but indexing requires sequential traversal taking O(n) time. Linked lists eliminate contiguous memory reallocation overhead but incur pointer overhead and poor CPU cache locality."
+  },
+  {
+    "id": "doc_cs_data_structures_02",
+    "course": "Computer Science",
+    "module": "FFF",
+    "topic": "Data Structures",
+    "difficulty": "Advanced",
+    "academic_level": "Undergraduate Year 2",
+    "source": "Open University FFF Advanced Algorithms",
+    "page": 112,
+    "title": "Balanced Binary Search Trees and Hash Table Collision Resolution",
+    "content": "Self-balancing binary search trees (such as AVL trees and Red-Black trees) guarantee O(log n) worst-case time complexity for search, insertion, and deletion operations by maintaining tree height invariants through tree rotations. In AVL trees, the balance factor between left and right subtree heights never exceeds 1. In Hash Tables, hash collisions occur when distinct keys produce identical hash indices via the hash function h(k). Primary collision resolution schemes include: 1) Separate Chaining: Each bucket holds a linked list or red-black tree (as in Java 8+ HashMap). 2) Open Addressing: Probing alternatives including linear probing h(k, i) = (h'(k) + i) mod m, quadratic probing, and double hashing. Load factor alpha = n/m determines when resizing and rehashing is required to maintain amortized O(1) access."
+  },
+  {
+    "id": "doc_cs_functions_01",
+    "course": "Computer Science",
+    "module": "FFF",
+    "topic": "Functions & Modularity",
+    "difficulty": "Beginner",
+    "academic_level": "Undergraduate Year 1",
+    "source": "Open University FFF Core Programming Guide",
+    "page": 22,
+    "title": "Modular Programming with Functions, Parameters, and Return Values",
+    "content": "Functions are reusable blocks of code that perform a single well-defined task. They promote code modularity, readability, and reduce duplication (the DRY principle: Don't Repeat Yourself). In Python, a function is defined with the 'def' keyword followed by the function name, parentheses containing parameters, and a colon. Functions can take arguments, perform calculations, and return a result using the 'return' statement. If no return statement is specified, Python functions return None by default. Example:\ndef calculate_grade(score):\n    if score >= 70: return 'Distinction'\n    elif score >= 50: return 'Pass'\n    else: return 'Fail'"
+  },
+  {
+    "id": "doc_cs_dp_01",
+    "course": "Computer Science",
+    "module": "FFF",
+    "topic": "Dynamic Programming",
+    "difficulty": "Advanced",
+    "academic_level": "Undergraduate Year 2",
+    "source": "Open University FFF Advanced Algorithms - Chapter 9",
+    "page": 156,
+    "title": "Dynamic Programming: Optimal Substructure and Overlapping Subproblems",
+    "content": "Dynamic Programming (DP) is an algorithmic optimization paradigm used when a problem exhibits two critical properties: 1) Optimal Substructure: An optimal solution to the problem contains optimal solutions to its subproblems. 2) Overlapping Subproblems: The algorithm visits the same subproblems repeatedly rather than generating new subproblems. There are two primary paradigms: Top-down with Memoization (recursive approach caching results) and Bottom-up with Tabulation (iterative approach filling a table from base cases). Classic examples include the 0/1 Knapsack Problem, Longest Common Subsequence (LCS), and Shortest Paths in DAGs. In 0/1 Knapsack with n items and capacity W, the DP relation is DP[i][w] = max(DP[i-1][w], DP[i-1][w - weight[i]] + value[i]), yielding O(n*W) pseudo-polynomial time complexity."
+  },
+  {
+    "id": "doc_oulad_ethics_01",
+    "course": "Learning Analytics",
+    "module": "BBB",
+    "topic": "Educational Analytics Ethics",
+    "difficulty": "Intermediate",
+    "academic_level": "Undergraduate Year 1",
+    "source": "Open University Learning Analytics Handbook",
+    "page": 12,
+    "title": "Ethical Use of Student Data in AI-Driven Education",
+    "content": "Learning analytics must prioritize student welfare, autonomy, and transparency. In platforms utilizing the Open University Learning Analytics Dataset (OULAD) or similar institutional datasets, demographic indicators (such as age, gender, IMD deprivation band, or disability status) must be treated with educational sensitivity. Crucially, demographic variables must never be treated as determinants of innate academic ability. Predictive indicators represent statistical risk assessments for targeted institutional support (e.g. outreach, study skills resources, deadline reminders), not definitive judgments of student capability. Recommendations should always be transparent and explainable to both student and educator."
+  }
+]

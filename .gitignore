@@ -1,0 +1,21 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Local databases
+*.db
+
+# Frontend dependencies
+node_modules/
+
+# Secrets and local configuration
+.env.*
+!.env.example

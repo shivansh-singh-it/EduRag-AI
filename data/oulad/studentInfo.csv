@@ -1,0 +1,12 @@
+code_module,code_presentation,id_student,gender,region,highest_education,imd_band,age_band,num_of_prev_attempts,studied_credits,disability,final_result
+FFF,2014J,10001,F,South East Region,A Level or Equivalent,50-60%,0-35,0,60,N,Pass
+BBB,2014J,10001,F,South East Region,A Level or Equivalent,50-60%,0-35,0,60,N,Pass
+FFF,2014J,10002,M,London Region,HE Qualification,70-80%,0-35,0,120,N,Distinction
+FFF,2014J,10003,F,Scotland,Lower Than A Level,10-20,35-55,1,60,Y,Withdrawn
+CCC,2014J,10004,M,North Western Region,A Level or Equivalent,30-40%,0-35,0,90,N,Pass
+BBB,2014J,10005,F,East Anglian Region,A Level or Equivalent,80-90%,0-35,0,60,N,Pass
+FFF,2014J,10006,M,West Midlands Region,Lower Than A Level,0-10%,35-55,2,60,N,Fail
+CCC,2014J,10007,F,South Region,Post Graduate Qualification,90-100%,35-55,0,60,N,Distinction
+BBB,2014J,10008,M,Yorkshire Region,A Level or Equivalent,40-50%,0-35,0,60,N,Pass
+FFF,2014J,10009,F,Wales,A Level or Equivalent,20-30%,0-35,0,60,N,Pass
+CCC,2014J,10010,M,South East Region,HE Qualification,60-70%,0-35,0,120,N,Distinction
